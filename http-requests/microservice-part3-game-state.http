@@ -1,0 +1,25 @@
+### Get Game State => Not found
+GET http://localhost:8888/game-state/1
+
+### Start new game (topic = 1 => General Knowledge)
+POST http://localhost:8888/start-game
+
+{
+  "playerName": "John Doe",
+  "topicId": 1
+}
+
+### List of quizzes with topicId = 1
+GET http://localhost:8888/quizzes?topicId=1
+
+### Pick quizId=101 and simulate /start-round functionalality, adding a new round
+POST http://localhost:8888/round
+
+{
+  "gameId": 1,
+  "quizId": 101,
+  "startTime": "2021-02-04T18:29:22.843Z"
+}
+
+### Get Game State
+GET http://localhost:8888/game-state/1

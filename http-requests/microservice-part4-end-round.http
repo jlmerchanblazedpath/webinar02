@@ -1,0 +1,47 @@
+### Start new game (topic = 1 => General Knowledge)
+POST http://localhost:8888/start-game
+
+{
+  "playerName": "John Doe",
+  "topicId": 1
+}
+
+### Start new round
+POST http://localhost:8888/start-round/1
+
+### Cheat: Query roundId=1 to get the quizId an see the correct answer
+GET http://localhost:8888/round/1
+
+### Cheat: query the quizId xxx
+GET http://localhost:8888/quiz/xxx
+
+### End current round
+POST http://localhost:8888/end-round
+
+{
+  "gameId": 1,
+  "userAnswer": 2
+}
+
+### LOOP UNTIL FINISH THE GAME
+
+### Start new round
+POST http://localhost:8888/start-round/1
+
+### End current round
+POST http://localhost:8888/end-round
+
+{
+  "gameId": 1,
+  "userAnswer": 1
+}
+
+### GET FINAL GAME STATE
+GET http://localhost:8888/game-state/1
+
+
+### Query all rounds in the game
+GET http://localhost:8888/rounds?gameId=1
+
+### Query the ended game
+GET http://localhost:8888/game/1

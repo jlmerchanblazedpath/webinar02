@@ -1,0 +1,13 @@
+### List all Topics
+GET http://localhost:8888/topics
+
+### Start new game
+POST http://localhost:8888/start-game
+
+{
+  "playerName": "John Doe",
+  "topicId": 1
+}
+
+### List all Games
+GET http://localhost:8888/games

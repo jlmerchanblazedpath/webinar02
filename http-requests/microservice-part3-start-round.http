@@ -1,0 +1,29 @@
+### Start new game (topic = 1 => General Knowledge)
+POST http://localhost:8888/start-game
+
+{
+  "playerName": "John Doe",
+  "topicId": 1
+}
+
+### Start new round
+POST http://localhost:8888/start-round/1
+
+### Query roundId=1 to update the data in the next step.
+GET http://localhost:8888/round/1
+
+### Simulate /end-round functionalality.
+### Copy and paste roundId=1 data and add wasCorrect and endTime info.
+PATCH http://localhost:8888/round/1
+
+{
+  "roundId": 1,
+  "quizId": 135,
+  "gameId": 1,
+  "startTime": "2021-02-05T08:22:55.591Z",
+  "endTime": "2021-02-05T08:22:55.591Z",
+  "wasCorrect": false
+}
+
+### Start a new round. Check that is other quiz
+POST http://localhost:8888/start-round/1
